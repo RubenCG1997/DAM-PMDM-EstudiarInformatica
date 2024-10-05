@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spCiclos, spPoblacion, spTipos;
     Button btn_borrar;
-    TextView info;
+    TextView txt_info;
+    String ciclo,poblacion,tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         spPoblacion = findViewById(R.id.sp_Poblacion);
         spTipos = findViewById(R.id.sp_Tipos);
         btn_borrar = findViewById(R.id.btn_Borrar);
-        info = findViewById(R.id.txt_Info);
+        txt_info = findViewById(R.id.txt_Info);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Ciclos, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -38,12 +39,15 @@ public class MainActivity extends AppCompatActivity {
         spCiclos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mensaje();
+
+                ciclo = spCiclos.getSelectedItem().toString();
+                mostrarMensaje(ciclo,poblacion,tipo);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
+
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.Poblaciones, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spPoblacion.setAdapter(adapter2);
@@ -51,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
         spPoblacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mensaje();
+
+                poblacion = spPoblacion.getSelectedItem().toString();
+                mostrarMensaje(ciclo,poblacion,tipo);
             }
 
             @Override
@@ -64,23 +70,24 @@ public class MainActivity extends AppCompatActivity {
         spTipos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mensaje();
+
+                tipo = spTipos.getSelectedItem().toString();
+                mostrarMensaje(ciclo,poblacion,tipo);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        btn_borrar.setOnClickListener(view -> info.setText(""));
+        btn_borrar.setOnClickListener(view -> txt_info.setText(""));
+
 
 
     }
 
-    private void mensaje(){
-        String ciclo = spCiclos.getSelectedItem().toString();
-        String poblacion = spPoblacion.getSelectedItem().toString();
-        String tipo = spTipos.getSelectedItem().toString();
-        info.setText(ciclo+" "+poblacion+" "+tipo);
+    private void mostrarMensaje(String ciclo, String poblacion,String tipo){
+        txt_info.setText(ciclo+" "+ "en "+poblacion+ " de forma "+ tipo);
     }
+
 
     }

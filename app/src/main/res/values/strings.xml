@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Estudiar Informática</string>
-    <string name="tv_ciclo">Ciclo:</string>
+    <string name="lbl_etiqueta1">Ciclo:</string>
     <string-array name="Ciclos">
         <item>Desarrollo de Aplicaciones Web</item>
         <item>Desarrollo de Aplicaciones Multiplataforma</item>
         <item>Administración de Sistemas Informáticos en Red</item>
     </string-array>
-    <string name="tv_Poblacion">Población:</string>
+    <string name="lbl_etiqueta2">Población:</string>
     <string-array name="Poblaciones">
         <item>Tomares</item>
         <item>Bormujos</item>
@@ -15,7 +15,7 @@
         <item>San Juan</item>
         <item>Mairena del Aljarafe</item>
     </string-array>
-    <string name="tv_Tipo">Tipo:</string>
+    <string name="lbl_etiqueta3">Tipo:</string>
     <string-array name="Tipos">
         <item>Presencial</item>
         <item>Online</item>
