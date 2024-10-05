@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Estudiar Informática</string>
+    <string name="tv_ciclo">Ciclo:</string>
+    <string-array name="Ciclos">
+        <item>Desarrollo de Aplicaciones Web</item>
+        <item>Desarrollo de Aplicaciones Multiplataforma</item>
+        <item>Administración de Sistemas Informáticos en Red</item>
+    </string-array>
+    <string name="tv_Poblacion">Población:</string>
+    <string-array name="Poblaciones">
+        <item>Tomares</item>
+        <item>Bormujos</item>
+        <item>Gines</item>
+        <item>Castilleja de la cuesta</item>
+        <item>San Juan</item>
+        <item>Mairena del Aljarafe</item>
+    </string-array>
+    <string name="tv_Tipo">Tipo:</string>
+    <string-array name="Tipos">
+        <item>Presencial</item>
+        <item>Online</item>
+        <item>Mixto</item>
+    </string-array>
+    <string name="btn_Borrar">Borrar</string>
+</resources>
